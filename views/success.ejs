@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSV 2 DB Importer_Success</title>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./styles/success.css">
+
+    <!--BOXICONS-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="navbar">
+
+            <div class="headernav">
+                <a href="/">
+                    <h1>CSV<span>2</span> DB Importer</h1>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="content">
+
+            <div class="iconDiv">
+                <i class='<%=icon %>'></i>
+            </div>
+
+            <div class="textDiv">
+                <p>
+                    <%=message %>
+                </p>
+            </div>
+
+            <div class="outputMessage">
+                <p>
+                    <%=output %>
+                </p>
+            </div>
+
+            <div class="buttonDiv">
+                <form method="post" action="/dashboard">
+                    <button type="submit">Back</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

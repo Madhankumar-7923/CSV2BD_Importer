@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    background-color: rgb(110, 162, 228);
+
+    /*background: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+}
+
+.wrapper {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 30px 40px;
+    width: 420px;
+
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background-color: transparent;
+}
+
+.wrapper h1 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    margin: 30px 0px;
+
+    width: 100%;
+    height: 50px;
+}
+
+.input-box input {
+    padding: 20px 50px 20px 20px;
+    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    outline: none;
+
+    width: 100%;
+    height: 100%;
+
+    color: #fff;
+    font-size: 16px;
+    background: transparent;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.input-box #unhide {
+    cursor: pointer;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px 0 15px;
+
+    font-size: 15px;
+}
+
+.remember-forgot label input {
+    margin-right: 3px;
+
+    vertical-align: middle;
+
+    accent-color: #fff;
+}
+
+.remember-forgot label input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .error-div {
+    display: block;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+
+    color: red;
+}
+
+.error-div ul {
+    list-style: none;
+}
+
+.wrapper .success-div {
+    display: block;
+
+    margin: 10px;
+
+    font-size: 16px;
+    text-align: center;
+
+    color: rgb(23, 239, 120);
+}
+
+.success-div ul {
+    list-style: none;
+}
+
+.wrapper .btn {
+    border: none;
+    border-radius: 40px;
+    outline: none;
+
+    width: 100%;
+    height: 45px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    background: #fff;
+}
+
+.wrapper .btn:hover {
+    cursor: pointer;
+
+    background-color: #ececec;
+}
+
+.wrapper .register-link {
+    margin: 20px 0 15px;
+
+    font-size: 15px;
+    text-align: center;
+}
+
+.register-link p a {
+    text-decoration: none;
+    font-weight: 600;
+
+    color: #fff;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.backArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backArrow a {
+    text-decoration: underline;
+
+    color: black;
+}
+
+.backArrow a:hover {
+    cursor: pointer;
+
+    color: #fff;
+}
+
+.backArrow a i {
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 425px) {
+
+    .wrapper {
+        margin: 5px;
+        padding: 30px 10px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .wrapper .remember-forgot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 5px;
+    }
+
+}

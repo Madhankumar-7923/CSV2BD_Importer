@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSV 2 DB Importer_Dashboard</title>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+
+    <!--BOXICONS-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="navbar">
+
+            <div class="headernav">
+                <a href="/">
+                    <h1>CSV<span>2</span> DB Importer</h1>
+                </a>
+            </div>
+
+            <div class="profilenav">
+                <p>Welcome, <strong>
+                        <%= user.charAt(0).toUpperCase() + user.slice(1) %>
+                    </strong> </p>
+                <i class='bx bxs-user-circle profileIcon'></i>
+            </div>
+
+            <div class="optionHover">
+                <a href="/"> <button>Home</button> </a>
+                <a href="/logout"> <button>Logout</button> </a>
+            </div>
+
+        </div>
+
+        <form class="importForm" id="importForm" action="/upload" method="POST" enctype="multipart/form-data">
+
+            <label for="file">
+                <input type="file" id="file" name="file" accept=".csv" hidden>
+
+                <div class="fileImpArea">
+                    <i class='bx bxs-cloud-upload'></i>
+                    <p>Drag and Drop or Click Here <br />Import Files </p>
+
+                </div>
+            </label>
+
+            <div class="entryarea">
+                <!-- <label for="tableName">Enter Table Name:</label> -->
+                <input type="text" id="tableName" name="tableName" autocomplete="off" required>
+                <div class="labeline">Enter Table Name</div>
+            </div>
+
+            <div class="errorLine" id="errorLine">
+
+            </div>
+
+            <div class="fileImp">
+
+            </div>
+
+            <div class="fileTable">
+
+            </div>
+
+            <div class="buttonDiv">
+                <button id="resetButton" type="reset">Cancel</button>
+                <button id="submitbutton" type="submit">Upload</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!--PAPAPARSER PARSE INTO TABLE-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    <script src="./js/dashboardScript.js"></script>
+
+</body>
+
+</html>

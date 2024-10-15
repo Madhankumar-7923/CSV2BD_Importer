@@ -1,0 +1,40 @@
+body {
+    padding: 50px;
+
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+    background-color: rgb(110, 162, 228);
+}
+
+h1 {
+    font-size: 50px;
+
+    color: #333;
+}
+
+i{
+    color: rgb(223, 84, 34);    
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+
+    color: #ffffff;
+}
+
+a:hover {
+    color: rgb(223, 84, 34);
+}
+
+@media screen and (max-width: 425px) {
+
+    body {
+        padding: 25px;
+    }
+
+}

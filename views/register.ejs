@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSV 2 DB Importer_Register</title>
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./styles/register.css">
+
+    <!--BOXICONS-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <form action="/register" method="post">
+
+            <h1>Register</h1>
+
+            <p class="p-line">Please Provide the details below to Register</p>
+
+            <div class="input-box">
+                <input id="name" type="text" name="name" placeholder="Name" autofocus autocomplete="name" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input id="email" type="email" name="email" placeholder="Email" autocomplete="email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+
+            <div class="input-box">
+                <input id="password" type="password" name="password" placeholder="Password" autocomplete="new-password"
+                    min="6" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="input-box">
+                <input id="cfpassword" type="password" name="cfpassword" placeholder="Confirm Password" min="6"
+                    required>
+                <i class='bx bxs-hide' id="unhide"></i>
+            </div>
+
+            <div class="remember-forgot">
+                <input id="checkBox" type="checkbox" name="checkBox" required> I agree to the terms & Conditions
+            </div>
+
+            <div class="error-div">
+                <ul>
+                    <% if(typeof errors !='undefined' ) { %>
+                        <% errors.forEach(error=> { %>
+                            <li>
+                                <%=error.message %>
+                            </li>
+                            <% }); %>
+                                <% } %>
+                </ul>
+            </div>
+
+            <button class="btn" type="submit">Register</button>
+
+            <div class="register-link">
+                <p>Already have an account? <a href="./login">Login</a> </p>
+            </div>
+
+            <div class="backArrow">
+                <a href="/"> <i class='bx bx-arrow-back'></i>back</a>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="./js/register.js"></script>
+
+</body>
+
+</html>
