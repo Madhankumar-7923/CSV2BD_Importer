@@ -42,9 +42,16 @@ submitButton.addEventListener("submit", async function (event) {
     const fileInput = document.getElementById("file");
     const errorLine = document.getElementById("errorLine");
     errorLine.textContent = "";
+    const maxSize = 2 * 1024 * 1024; // 2 MB
 
     if (!fileInput.files[0]) {
         errorLine.textContent = "No file Selected.";
+        errorLine.classList.add("active3");
+        return;
+    }
+
+    if (fileInput.files[0].size > maxSize) {
+        errorLine.textContent = "File Size must be less than 50MB.";
         errorLine.classList.add("active3");
         return;
     }
