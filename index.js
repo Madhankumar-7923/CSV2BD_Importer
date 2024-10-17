@@ -7,6 +7,7 @@ import flash from "express-flash";
 import passport from "passport";
 import multer from "multer";
 import fs from "fs";
+import PGStore from 'connect-pg-simple';
 
 import db from "./utils/db.js";
 import initialize from "./utils/passportconfig.js";
@@ -36,7 +37,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Set the views directory
 app.set('views', path.join(__dirname, 'views'));
 
+// Set up the session store
+const PgSession = PGStore(session);
+
 app.use(session({
+    store: new PgSession({
+        pool: db, // Connection pool
+        tableName: 'session' // Use a specific table name for sessions
+    }),
     secret: process.env.SESSION_CODE,
     resave: false,
     saveUninitialized: false
