@@ -6,6 +6,7 @@ import session from "express-session";
 import flash from "express-flash";
 import passport from "passport";
 import multer from "multer";
+import fs from "fs";
 
 import db from "./utils/db.js";
 import initialize from "./utils/passportconfig.js";
@@ -18,7 +19,6 @@ env.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const upload = multer({ dest: 'uploads/' });
 
 // Get the directory name from the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -45,6 +45,23 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+// Configure multer to store files in the /tmp directory
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const tmpDir = path.join('/tmp', 'uploads');
+        // Create the directory if it doesn't exist
+        if (!fs.existsSync(tmpDir)) {
+            fs.mkdirSync(tmpDir, { recursive: true });
+        }
+        cb(null, tmpDir); // Save files to /tmp/uploads
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname); // Use original filename
+    },
+});
+
+const upload = multer({ storage: storage });
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
