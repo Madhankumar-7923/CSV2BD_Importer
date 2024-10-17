@@ -11,17 +11,30 @@ import db from "./utils/db.js";
 import initialize from "./utils/passportconfig.js";
 import dataCSV from "./utils/csvImporter.js";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
 env.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 const upload = multer({ dest: 'uploads/' });
 
+// Get the directory name from the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 initialize(passport);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+
+// set the public files directory
+app.use(express.static(path.join(__dirname, 'public')));
+/*app.use(express.static("public"));*/
+
+// Set the views directory
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(session({
     secret: process.env.SESSION_CODE,
