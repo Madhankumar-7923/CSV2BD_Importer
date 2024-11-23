@@ -14,7 +14,7 @@ body {
     justify-content: flex-start;
     align-items: center;
 
-    min-height: 100vh;
+    min-height: 100dvh;
 
     background-color: rgb(110, 162, 228);
     /*background-color: rgb(9, 70, 149);*/
